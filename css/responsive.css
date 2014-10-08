@@ -1,6 +1,6 @@
 @media only screen and (max-width : 1340px) and (min-width: 960px){
 	/* General Container Width */
-	.container { width: 960px; }
+	.container { width: 940px; }
 
 	/* Slider Styles */
 	#slider .slide .book-cover, #slider .slide .slide-description { height: 270px; }
@@ -8,7 +8,7 @@
 	#slider .slide .sd-body { height: 110px; overflow: hidden; }
 
 	/* Article Container */
-	.article-container article .content {float: left;width: 443px;}
+	.article-container article .content {float: left;width: 430px;}
 	.featured-carousel .slide .article-content {float: left;width: 80.5%;}
 
 	/* Widget - Latest Comments */
@@ -22,6 +22,11 @@
 	/* Author Box */
 	#author-box .author-details { width: 83%; }
 		.latest-comments .widget .comment-body { width: 199px; }
+
+	#top-bar-menu ul li a {
+		font-size: 0.7em;
+		line-height: 5.5;
+	}
 
 }	
 
@@ -78,13 +83,21 @@
 	/* Author Details */
 	#author-box .author-details { width: 78%; }
 
+	#top-bar-menu ul li a {
+		font-size: 0.58em;
+		line-height: 6.5;
+	}
+	#top-bar-menu ul li {
+		margin-right: 0.2em;
+	}
+
 }
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen  and (max-width: 959px) {
 
 	/* Base container size */
-	.container { width: 767px; }
+	.container { width: 747px; }
 
 	/* Main Menu */
 	#main-menu nav ul { display: none; }
@@ -95,7 +108,7 @@
 
 	/* Article Container */
 	.article-container { width: 100%; }
-	.article-container article .content { width: 545px; }
+	.article-container article .content { width: 525px; }
 
 	/* Main Sidebar */
 	#main-sidebar { width: 100%; margin-bottom: 1.4em; }
@@ -113,7 +126,7 @@
 @media only screen and (max-width: 767px) {
 
 	/* Base container size */
-	.container { width: 480px; }
+	.container { width: 460px; }
 
 	/* Top Bar */
 	#top-bar { background:#3d3834; height: auto; padding-bottom: 1.4em;}
@@ -175,4 +188,21 @@
 
 	/* Latest Reviews Block */
 	#latest-reviews-block .article-text { text-align: left;}
+
+	#top-bar-menu ul li a {
+		font-size: 0.8em;
+		line-height: 2.6;
+	}
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 479px) {
+
+	/* Base container size */
+	.container { width: 100%; }
+	
+	#comments-section #comments-container .children li, 
+	#comments-section #comments-container .children .children {
+		padding-left: 5%;
+	}
 }

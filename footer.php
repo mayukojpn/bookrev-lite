@@ -1,4 +1,4 @@
-<footer id="main-footer" class="clearfix">
+<footer id="main-footer" class="">
 
     <div class="upper-footer clearfix">
         <div class="container">

@@ -39,6 +39,7 @@ Text Domain: book_rev_lite
 
 /* Ad Banner - 468 x 61 */
 #inner-header #ad-banner { float: right; }
+#inner-header #ad-banner img{ max-width: 100%; }
 
 /* Main Menu */
 #main-menu nav .main-dropdown { display: none; }
@@ -59,7 +60,7 @@ Text Domain: book_rev_lite
 #main-menu nav ul li a:hover { color:#8e8e8e; }
 
 /* Main Menu Social Icons */
-#main-menu #menu-social-icons { float: right; border-left: 1px dotted #cacaca; padding-left: 10px;}
+#main-menu #menu-social-icons { float: right; border-left: 1px dotted #cacaca; padding-left: 10px; text-align: center;}
 #main-menu #menu-social-icons ul , #main-menu #menu-social-icons ul li { margin: 0; padding: 0; }
 #main-menu #menu-social-icons ul li { margin-left: 0.8em; }
 #main-menu #menu-social-icons ul li a { font-size: 1.4em; color:#d5d5d5;}
@@ -264,7 +265,7 @@ nav#pagination ul li a:hover { background:#cacaca;}
 nav#pagination ul li.active a { background: #a6dd61;}
 
 /* Main Sidebar */
-#main-sidebar { float: left; width: 30%; background:#fff; border-left: 1px solid #ededed; }
+#main-sidebar { float: left; width: 30%; background:#fff; border-left: 1px solid #ededed; overflow: hidden; }
 
 /* Default list item styling */
 .widget ul { padding: 0px !important; }
