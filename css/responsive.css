@@ -193,6 +193,10 @@
 		font-size: 0.8em;
 		line-height: 2.6;
 	}
+
+	body {
+		overflow: hidden;
+	}	
 }
 
 /* All Mobile Sizes (devices and browser) */
@@ -205,4 +209,5 @@
 	#comments-section #comments-container .children .children {
 		padding-left: 5%;
 	}
+
 }
