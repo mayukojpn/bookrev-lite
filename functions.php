@@ -151,21 +151,7 @@ if(!function_exists('book_rev_lite_sanitize_hex')) {
 		if(preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $hex)) return $hex;
 		return null;
 	}	
-}
-
-// Print the page title
-if(!function_exists("book_rev_lite_get_page_title")) {
-	function book_rev_lite_get_page_title() {
-		global $page, $paged;
-	    wp_title( '|', true, 'right' );
-	    bloginfo( 'name' ); 
-	    $site_description = get_bloginfo( 'description', 'display' );
-	    if ( $site_description && ( is_home() || is_front_page() ) )
-	    echo " | $site_description";
-	    if ( $paged >= 2 || $page >= 2 )
-	    echo ' | ' . sprintf( __( 'Page %s', 'book-rev-lite_' ), max( $paged, $page ) ); 
-	} 
-}
+}// Custom title functionfunction book_rev_lite_wp_title( $title, $sep ) {    global $paged, $page;    if ( is_feed() )        return $title;    // Add the site name.    $title .= get_bloginfo( 'name' );    // Add the site description for the home/front page.    $site_description = get_bloginfo( 'description', 'display' );    if ( $site_description && ( is_home() || is_front_page() ) )        $title = "$title $sep $site_description";    // Add a page number if necessary.    if ( $paged >= 2 || $page >= 2 )        $title = "$title $sep " . sprintf( __( 'Page %s', 'ti' ), max( $paged, $page ) );    return $title;}add_filter( 'wp_title', 'book_rev_lite_wp_title', 10, 2 );
 
 // Register theme specific sidebars.
 if(!function_exists('book_rev_lite_register_sidebars')) {

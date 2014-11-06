@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 
     <meta name="description" content="<?php bloginfo('description'); ?>">
-    <title><?php book_rev_lite_get_page_title(); ?></title>
+    <title><?php wp_title(); ?></title>
     
   
     <!-- HTML5 SHIV -->
