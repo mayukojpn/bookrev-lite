@@ -39,12 +39,7 @@
                     <?php wp_nav_menu( array( 'theme_location'   => 'secondary') ); ?>
             </nav><!-- end #top-bar-menu -->
 
-            <div id="top-bar-search">
-                <form role="search" action="<?php echo site_url('/'); ?>" method="get">
-                    <input type="text" name="s" placeholder="Search for something">
-                </form>
-                <span class="search-icon"><i class="fa fa-search"></i></span>
-            </div><!-- end #top-bar-search -->
+            <?php get_search_form(); ?>
         </div><!-- end .container -->
     </section><!-- end #top-bar -->
 
