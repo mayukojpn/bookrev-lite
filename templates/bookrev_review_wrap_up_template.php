@@ -1,5 +1,4 @@
-<?php if (is_plugin_active('wp-product-review/wp-product-review.php') && book_rev_lite_wpr_get_status()=="Yes") : ?>
-
+<?php if (function_exists('cwppos_show_review') && book_rev_lite_wpr_get_status()=="Yes") : ?>
 
         <div id="wrap-up" class="clearfix">
             <header>

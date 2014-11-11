@@ -22,9 +22,8 @@ book_rev_lite_build_font_url($fontsUsed, $fontTransient);
 
 echo "<style type='text/css'>";
 
-// If CWP Product Review plugin is active and running set up the special classes.
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if(is_plugin_active('wp-product-review/wp-product-review.php')) {
+// If CWP Product Review plugin is active and running set up the special classes.
+if(function_exists('cwppos_show_review')) {
 	$setColors = book_rev_lite_get_product_review_colors();
 	foreach($setColors as $key => $value) echo ".grade." . $key . " { background: " . $value . " !important;} ";	
 } 
