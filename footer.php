@@ -29,7 +29,7 @@
             </div><!-- end .footer-logo -->
 
             <div class="copyright-info">
-                <p><?php echo esc_attr(get_theme_mod( 'copyright_textbox', 'Bookrev Pro powered by WordPress' )); ?></p>
+                <p><?php echo get_theme_mod( 'copyright_textbox', 'Bookrev Pro powered by WordPress' ); ?></p>
             </div><!-- end .copyright-info -->
         </div><!-- end .container -->
     </div><!-- end .lower-footer -->

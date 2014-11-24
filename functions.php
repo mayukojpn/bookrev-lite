@@ -13,29 +13,11 @@ if(!function_exists('book_rev_lite_theme_setup')) {
 		add_theme_support( 'post-thumbnails' ); 
 
 		// Add theme support for automatic feed links in the header.
-		add_theme_support( 'automatic-feed-links' );
-
-		// Register the main primary header menu.
+		add_theme_support( 'automatic-feed-links' );		// register menus
 		register_nav_menus( array(
-		    'primary' => __( 'Primary Header Menu', 'book-rev-lite' ),
+		    'primary' => __( 'Primary Header Menu', 'book-rev-lite' ),			'secondary' => __( 'Top Bar Menu', 'book-rev-lite' ),
 		));
-
-		// Register the top bar menu.
-		register_nav_menus( array(
-		    'secondary' => __( 'Top Bar Menu', 'book-rev-lite' ),
-		));
-
-		// Create the default "Uncategorized" & "Reviews" categories if they don't exist.
-		if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
-			require_once (ABSPATH.'/wp-admin/includes/taxonomy.php'); 
-		    if ( !get_cat_ID( 'Uncategorized' ) ) {
-		            wp_create_category( 'Uncategorized' );
-		    }
-		    if ( !get_cat_ID( 'Reviews' ) ) {
-		            wp_create_category( 'Reviews' );
-		    }
-		}
-
+
 		// Setup theme customizer settings & controls.
 		require_once(get_template_directory() . "/inc/cc_settings.php");
 		
@@ -87,16 +69,16 @@ function book_rev_lite_required_plugins() {
 			'menu_title'                       			=> __( 'Install Plugins', 'book-rev-lite' ),
 			'installing'                       			=> __( 'Installing Plugin: %s', 'book-rev-lite' ), // %1$s = plugin name
 			'oops'                             			=> __( 'Something went wrong with the plugin API.', 'book-rev-lite' ),
-			'notice_can_install_required'     			=> _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ), // %1$s = plugin name(s)
-			'notice_can_install_recommended'			=> _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_install'  					=> _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ), // %1$s = plugin name(s)
-			'notice_can_activate_required'    			=> _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
-			'notice_can_activate_recommended'			=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_activate' 					=> _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.' ), // %1$s = plugin name(s)
-			'notice_ask_to_update' 						=> _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.' ), // %1$s = plugin name(s)
-			'notice_cannot_update' 						=> _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ), // %1$s = plugin name(s)
-			'install_link' 					  			=> _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
-			'activate_link' 				  			=> _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
+			'notice_can_install_required'     			=> _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'book-rev-lite' ), // %1$s = plugin name(s)
+			'notice_can_install_recommended'			=> _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.','book-rev-lite' ), // %1$s = plugin name(s)
+			'notice_cannot_install'  					=> _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.','book-rev-lite' ), // %1$s = plugin name(s)
+			'notice_can_activate_required'    			=> _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.','book-rev-lite' ), // %1$s = plugin name(s)
+			'notice_can_activate_recommended'			=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.','book-rev-lite' ), // %1$s = plugin name(s)
+			'notice_cannot_activate' 					=> _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.','book-rev-lite' ), // %1$s = plugin name(s)
+			'notice_ask_to_update' 						=> _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.','book-rev-lite' ), // %1$s = plugin name(s)
+			'notice_cannot_update' 						=> _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.','book-rev-lite' ), // %1$s = plugin name(s)
+			'install_link' 					  			=> _n_noop( 'Begin installing plugin', 'Begin installing plugins','book-rev-lite' ),
+			'activate_link' 				  			=> _n_noop( 'Activate installed plugin', 'Activate installed plugins','book-rev-lite' ),
 			'return'                           			=> __( 'Return to Required Plugins Installer', 'book-rev-lite' ),
 			'plugin_activated'                 			=> __( 'Plugin activated successfully.', 'book-rev-lite' ),
 			'complete' 									=> __( 'All plugins installed and activated successfully. %s', 'book-rev-lite' ), // %1$s = dashboard link
@@ -151,7 +133,7 @@ if(!function_exists('book_rev_lite_sanitize_hex')) {
 		if(preg_match('|^#([A-Fa-f0-9]{3}){1,2}$|', $hex)) return $hex;
 		return null;
 	}	
-}// Custom title functionfunction book_rev_lite_wp_title( $title, $sep ) {    global $paged, $page;    if ( is_feed() )        return $title;    // Add the site name.    $title .= get_bloginfo( 'name' );    // Add the site description for the home/front page.    $site_description = get_bloginfo( 'description', 'display' );    if ( $site_description && ( is_home() || is_front_page() ) )        $title = "$title $sep $site_description";    // Add a page number if necessary.    if ( $paged >= 2 || $page >= 2 )        $title = "$title $sep " . sprintf( __( 'Page %s', 'ti' ), max( $paged, $page ) );    return $title;}add_filter( 'wp_title', 'book_rev_lite_wp_title', 10, 2 );
+}// Custom title functionfunction book_rev_lite_wp_title( $title, $sep ) {    global $paged, $page;    if ( is_feed() )        return $title;    // Add the site name.    $title .= get_bloginfo( 'name' );    // Add the site description for the home/front page.    $site_description = get_bloginfo( 'description', 'display' );    if ( $site_description && ( is_home() || is_front_page() ) )        $title = "$title $sep $site_description";    // Add a page number if necessary.    if ( $paged >= 2 || $page >= 2 )        $title = "$title $sep " . sprintf( __( 'Page %s', 'book-rev-lite' ), max( $paged, $page ) );    return $title;}add_filter( 'wp_title', 'book_rev_lite_wp_title', 10, 2 );
 
 // Register theme specific sidebars.
 if(!function_exists('book_rev_lite_register_sidebars')) {
@@ -507,4 +489,4 @@ add_action( 'wp_enqueue_scripts', 'book_rev_lite_load_req_scripts' );
 add_action( 'customize_register', 'book_rev_lite_theme_customizer' );
 
 // Register theme specific sidebars.
-add_action( 'widgets_init', 'book_rev_lite_register_sidebars' );
+add_action( 'widgets_init', 'book_rev_lite_register_sidebars' );add_action('wp_print_scripts','book_rev_lite_php_style');function book_rev_lite_php_style() {	?>	<style type="text/css">			</style><?php}

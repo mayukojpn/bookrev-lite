@@ -3,14 +3,7 @@
 if(!function_exists('book_rev_lite_theme_customizer')) {
 	function book_rev_lite_theme_customizer($wpc) {
 		// Load the custom Customizer Controls
-		require_once( get_template_directory() . '/inc/cc_controls.php' );
-
-		// Remove the default Color section.
-		$wpc->remove_section('colors');
-
-		// Remove the default Static Front Page section.
-		$wpc->remove_section('static_front_page');
-
+		require_once( get_template_directory() . '/inc/cc_controls.php' );
 		$wpc->add_section( 'cwp_theme_notes' , array(
 		'title'      => __('Theme Support','book-rev-lite'),
 		'description' => sprintf( __( "Thank you for being part of this! We've spent almost 6 months building ThemeIsle without really knowing if anyone will ever use a theme or not, so we're very grateful that you've decided to work with us. Wanna <a href='http://themeisle.com/contact/' target='_blank'>say hi</a>?
@@ -18,9 +11,9 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		'priority'   => 1,
 		));
 
-		$wpc->add_setting('cwp_theme_notes');
+		$wpc->add_setting('cwp_theme_notes', array('sanitize_callback' => 'bookrev_lite_sanitize_notes'));
 
-		$wpc->add_control( new CWP_Theme_Support( $wpc, 'cwp_theme_notes',
+		$wpc->add_control( new book_rev_lite_Theme_Support( $wpc, 'cwp_theme_notes',
 	    array(
 	        'section' => 'cwp_theme_notes',
 	    )));
@@ -35,7 +28,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		);
 
 			// Default Article Image Upload Setting
-			$wpc->add_setting('default-article-image-upload');
+			$wpc->add_setting('default-article-image-upload',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Default Article Image Upload Control
 			$wpc->add_control(
@@ -51,7 +44,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			);
 
 			// Default Article Product Image Upload Setting
-			$wpc->add_setting('default-product-image-upload');
+			$wpc->add_setting('default-product-image-upload',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Default Article Image Upload Control
 			$wpc->add_control(
@@ -67,7 +60,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			);
 			
 			// Website Favicon Image Upload Setting
-			$wpc->add_setting('favicon-image');
+			$wpc->add_setting('favicon-image',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Website Favicon Image Upload Control
 			$wpc->add_control(
@@ -96,9 +89,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  Google Plus Link
 			 */
 			// Google Plus Setting
-			$wpc->add_setting(
-			    'gplus_href'
-			);
+			$wpc->add_setting('gplus_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Google Plus Control
 			$wpc->add_control(
@@ -115,9 +106,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  Facebook Link
 			 */
 			// Facebook Setting
-			$wpc->add_setting(
-			    'facebook_href'
-			);
+			$wpc->add_setting('facebook_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Facebook Control
 			$wpc->add_control(
@@ -133,9 +122,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  Twitter Link
 			 */
 			// Twitter Setting
-			$wpc->add_setting(
-			    'twitter_href'
-			);
+			$wpc->add_setting( 'twitter_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Twitter Control
 			$wpc->add_control(
@@ -151,9 +138,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  Instagram Link
 			 */
 			// Instagram Setting
-			$wpc->add_setting(
-			    'instagram_href'
-			);
+			$wpc->add_setting('instagram_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Instagram Control
 			$wpc->add_control(
@@ -169,9 +154,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  Pinterest Link
 			 */
 			// Pinterest Setting
-			$wpc->add_setting(
-			    'pinterest_href'
-			);
+			$wpc->add_setting('pinterest_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Pinterest Control
 			$wpc->add_control(
@@ -187,9 +170,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  YouTube Link
 			 */
 			// YouTube Setting
-			$wpc->add_setting(
-			    'youtube_href'
-			);
+			$wpc->add_setting('youtube_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// YouTube Control
 			$wpc->add_control(
@@ -205,9 +186,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  Vimeo Link
 			 */
 			// Vimeo Setting
-			$wpc->add_setting(
-			    'vimeo_href'
-			);
+			$wpc->add_setting('vimeo_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Vimeo Control
 			$wpc->add_control(
@@ -223,9 +202,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  Tumblr Link
 			 */
 			// Tumblr Setting
-			$wpc->add_setting(
-			    'tumblr_href'
-			);
+			$wpc->add_setting('tumblr_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Tumblr Control
 			$wpc->add_control(
@@ -241,9 +218,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  LinkedIn Link
 			 */
 			// LinkedIn Setting
-			$wpc->add_setting(
-			    'linkedin_href'
-			);
+			$wpc->add_setting('linkedin_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// LinkedIn Control
 			$wpc->add_control(
@@ -259,9 +234,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			 *  Flickr Link
 			 */
 			// Flickr Setting
-			$wpc->add_setting(
-			    'flickr_href'
-			);
+			$wpc->add_setting('flickr_href',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Flickr Control
 			$wpc->add_control(
@@ -291,7 +264,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'copyright_textbox',
 			    array(
-			        'default' => __("WordPress Theme developed by ThemeIsle", "book-rev-lite")
+			        'default' => __("WordPress Theme developed by ThemeIsle", "book-rev-lite"), 'sanitize_callback' => 'book_rev_lite_sanitize_text'
 			    )
 			);
 			// Copyright Text Control
@@ -312,7 +285,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'lower-footer-background-color',
 				array(
 					'default' 			=> '#3c3c3c',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -337,7 +310,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'footer-background-color',
 				array(
 					'default' 			=> '#fffff',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -359,7 +332,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		 */
 		
 			// Footer Logo Upload Setting
-			$wpc->add_setting('footer-logo-upload');
+			$wpc->add_setting('footer-logo-upload', array('sanitize_callback' => 'esc_url_raw'));
 
 			// Footer Logo Upload Control
 			$wpc->add_control(
@@ -377,7 +350,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			// Display Footer Logo Image Setting & Control 
 			$wpc->add_setting('mp_display_footer_logo_image',
 				array(
-						"default"	=> true
+						"default"	=> true, 'sanitize_callback' => 'esc_url_raw'
 					)
 				);
 			$wpc->add_control(
@@ -403,7 +376,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			// Display Slider Setting & Control 
 			$wpc->add_setting('head_display_ad', array(
-				"default" => false 
+				"default" => false , 'sanitize_callback' => 'book_rev_lite_sanitize_checkbox'
 				));
 			$wpc->add_control(
 				'head_display_ad',
@@ -424,7 +397,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'header-background-color',
 				array(
 					'default' 			=> '#f9f9f9',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -449,7 +422,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'header-menu-background-color',
 				array(
 					'default' 			=> '#fffff',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -471,7 +444,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		 */
 		
 			// Header Advertisment Banner Image Setting
-			$wpc->add_setting('header-ad-img');
+			$wpc->add_setting('header-ad-img', array('sanitize_callback' => 'esc_url_raw'));
 
 			// Header Advertisment Banner Image Control
 			$wpc->add_control(
@@ -492,7 +465,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		 */
 			// Header Advertisment URL Setting
 			$wpc->add_setting(
-			    'header-ad-url'
+			    'header-ad-url', array('sanitize_callback' => 'esc_url_raw')
 			);
 
 			// Header Advertisment URL Control
@@ -513,7 +486,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'header-ad-alt',
 			    array(
-			        'default' => __("This is the default advertisment banner that comes with the theme. You can change it using the WordPress Customizer.", "book-rev-lite")
+			        'default' => __("This is the default advertisment banner that comes with the theme. You can change it using the WordPress Customizer.", "book-rev-lite"),'sanitize_callback' => 'book_rev_lite_sanitize_text'
 			    )
 			);
 
@@ -533,7 +506,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		 */
 		
 			// Header Logo Setting
-			$wpc->add_setting('header-logo');
+			$wpc->add_setting('header-logo',array('sanitize_callback' => 'esc_url_raw'));
 
 			// Header Logo Control
 			$wpc->add_control(
@@ -554,7 +527,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			// Logo Width Setting
 			$wpc->add_setting('logo-width',
 				array(
-					'default'	=> '176'
+					'default'	=> '176', 'sanitize_callback' => 'book_rev_lite_sanitize_number'
 				)
 			);
 
@@ -575,7 +548,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			// Logo Height Setting
 			$wpc->add_setting('logo-height',
 				array(
-					'default'	=> '56'
+					'default'	=> '56','sanitize_callback' => 'book_rev_lite_sanitize_number'
 				)
 			);
 
@@ -601,7 +574,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		);
 
 			// Display Slider Setting & Control 
-			$wpc->add_setting('mp_display_slider');
+			$wpc->add_setting('mp_display_slider', array('sanitize_callback' => 'book_rev_lite_sanitize_checkbox'));
 			$wpc->add_control(
 				'mp_display_slider',
 				array(
@@ -613,7 +586,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			);
 
 			// Display Featured From Category Setting & Control 
-			$wpc->add_setting('mp_display_ffc');
+			$wpc->add_setting('mp_display_ffc', array('sanitize_callback' => 'book_rev_lite_sanitize_checkbox'));
 			$wpc->add_control(
 				'mp_display_ffc',
 				array(
@@ -625,7 +598,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			);
 
 			// Display Latest Articles Carousel Setting & Control 
-			$wpc->add_setting('mp_display_lac');
+			$wpc->add_setting('mp_display_lac', array('sanitize_callback' => 'book_rev_lite_sanitize_checkbox'));
 			$wpc->add_control(
 				'mp_display_lac',
 				array(
@@ -637,7 +610,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			);
 
 			// Display Highlight of the Day Setting & Control 
-			$wpc->add_setting('mp_display_hotd');
+			$wpc->add_setting('mp_display_hotd', array('sanitize_callback' => 'book_rev_lite_sanitize_checkbox'));
 			$wpc->add_control(
 				'mp_display_hotd',
 				array(
@@ -650,11 +623,11 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			// Slider Category Setting & Control 
 			$wpc->add_setting('mp_slider_cat',
-				array('default' => '')
+				array('default' => '','sanitize_callback' => 'book_rev_lite_sanitize_dropdown')
 			);
 
 			$wpc->add_control(
-				new Category_Dropdown_Custom_Control(
+				new book_rev_lite_Category_Dropdown_Custom_Control(
 					$wpc,
 					'mp_slider_cat',
 					array(
@@ -667,11 +640,11 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			// Featured from Category Category Setting & Control 
 			$wpc->add_setting('mp_ffc_cat',
-				array('default' => '')
+				array('default' => '','sanitize_callback' => 'book_rev_lite_sanitize_dropdown')
 			);
 
 			$wpc->add_control(
-				new Category_Dropdown_Custom_Control(
+				new book_rev_lite_Category_Dropdown_Custom_Control(
 					$wpc,
 					'mp_ffc_cat',
 					array(
@@ -684,11 +657,11 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			// Highlight of the Day Categoru Setting & Control 
 			$wpc->add_setting('mp_hotd_cat',
-				array('default' => '')
+				array('default' => '','sanitize_callback' => 'book_rev_lite_sanitize_dropdown')
 			);
 
 			$wpc->add_control(
-				new Category_Dropdown_Custom_Control(
+				new book_rev_lite_Category_Dropdown_Custom_Control(
 					$wpc,
 					'mp_hotd_cat',
 					array(
@@ -703,7 +676,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'mp_hotd_title',
 			    array(
-			        'default' => __("Highlight of the Day", "book-rev-lite")
+			        'default' => __("Highlight of the Day", "book-rev-lite") ,'sanitize_callback' => 'book_rev_lite_sanitize_text'
 			    )
 			);
 			// Featured Category Block Title Control
@@ -720,7 +693,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'mp_fcb_title',
 			    array(
-			        'default' => __("Featured from {{category_selected}}", "book-rev-lite")
+			        'default' => __("Featured from {{category_selected}}", "book-rev-lite"),'sanitize_callback' => 'book_rev_lite_sanitize_text'
 			    )
 			);
 			// Featured Category Block Title Control
@@ -738,7 +711,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'mp_lab_title',
 			    array(
-			        'default' => __("Latest Reviews", "book-rev-lite")
+			        'default' => __("Latest Reviews", "book-rev-lite"),'sanitize_callback' => 'book_rev_lite_sanitize_text'
 			    )
 			);
 
@@ -755,11 +728,11 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 			// Latest Articles Block Category Category Setting & Control 
 			$wpc->add_setting('mp_lab_cat',
-				array('default' => '')
+				array('default' => '','sanitize_callback' => 'book_rev_lite_sanitize_dropdown')
 			);
 
 			$wpc->add_control(
-				new Category_Dropdown_Custom_Control(
+				new book_rev_lite_Category_Dropdown_Custom_Control(
 					$wpc,
 					'mp_lab_cat',
 					array(
@@ -774,7 +747,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'mp_lab_count',
 			    array(
-			        'default' => __("5", "book-rev-lite")
+			        'default' => __("5", "book-rev-lite"),'sanitize_callback' => 'book_rev_lite_sanitize_number'
 			    )
 			);
 			// Latest Articles Block Count - Control
@@ -792,7 +765,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'mp_layout_type',
 			    array(
-			        'default' => 'sidebarright',
+			        'default' => 'sidebarright','sanitize_callback' => 'book_rev_lite_sanitize_radio'
 			    )
 			);
 			 
@@ -814,7 +787,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'mp_lab_count',
 			    array(
-			        'default' => __("5", "book-rev-lite")
+			        'default' => __("5", "book-rev-lite"),'sanitize_callback' => 'book_rev_lite_sanitize_number'
 			    )
 			);
 			// Highlight of the Day Category - Control
@@ -847,7 +820,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'featured-category-block-bgcolor',
 				array(
 					'default' 			=> '#fffff',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -872,7 +845,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'latest-articles-block-bgcolor',
 				array(
 					'default' 			=> '#fffff',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -897,7 +870,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'lab-article-hover-bgcolor',
 				array(
 					'default' 			=> '#484848',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -922,7 +895,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'hotd-bg-color',
 				array(
 					'default' 			=> '#fff',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -947,7 +920,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'article-bgcolor',
 				array(
 					'default' 			=> '#fff',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -972,7 +945,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'pagination-bgcolor',
 				array(
 					'default' 			=> '#fff',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -997,7 +970,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'pagination-button-color',
 				array(
 					'default' 			=> '#e6e6e6',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -1022,7 +995,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'pagination-button-color-hover',
 				array(
 					'default' 			=> '#cacaca',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -1047,7 +1020,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'pagination-button-color-active',
 				array(
 					'default' 			=> '#a6dd61',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -1072,7 +1045,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'block-header-bgcolor',
 				array(
 					'default' 			=> '#fcfcfc',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -1097,7 +1070,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'widget-header-bgcolor',
 				array(
 					'default' 			=> '#ffffff',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -1122,7 +1095,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 				'widget-header-border-color',
 				array(
 					'default' 			=> '#dddddd',
-					'sanitize_callback'	=> 'cwp_sanitize_hex'
+					'sanitize_callback'	=> 'sanitize_hex_color'
 				)
 			);
 
@@ -1151,10 +1124,10 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		// Articles Title Font
 		$wpc->add_setting( 'article-title-font', array(
-			'default'	=> '20', // Arvo
+			'default'	=> '20', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
 			));
 
-		$wpc->add_control( new Google_Font_Dropdown_Custom_Control( $wpc, 'article-title-font', array(
+		$wpc->add_control( new book_rev_lite_Google_Font_Dropdown_Custom_Control( $wpc, 'article-title-font', array(
 			'label'		=> 'Primary Font (Titles)',
 			'section'  	=> 'wpc_tc_section',
 			'settings' 	=> 'article-title-font',
@@ -1164,10 +1137,10 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		// Articles Content Font
 		$wpc->add_setting( 'article-content-font', array(
-			'default'	=> '26',  // Titillium Web
+			'default'	=> '26', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
 			));
 
-		$wpc->add_control( new Google_Font_Dropdown_Custom_Control( $wpc, 'article-content-font', array(
+		$wpc->add_control( new book_rev_lite_Google_Font_Dropdown_Custom_Control( $wpc, 'article-content-font', array(
 			'label'		=> 'Secondary Font (Content)',
 			'section'  	=> 'wpc_tc_section',
 			'settings' 	=> 'article-content-font',
@@ -1176,14 +1149,14 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 
 		// Category Font
 		$wpc->add_setting( 'meta-info-font', array(
-			'default'	=> '26', // Titillium Web
+			'default'	=> '26', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
 			));
 
-		$wpc->add_control( new Google_Font_Dropdown_Custom_Control( $wpc, 'meta-info-font', array(
+		$wpc->add_control( new book_rev_lite_Google_Font_Dropdown_Custom_Control( $wpc, 'meta-info-font', array(
 			'label'		=> 'Meta Font',
 			'section'  	=> 'wpc_tc_section',
 			'settings' 	=> 'meta-info-font',
 			'priority' 	=> 14
 		)));
 	}
-}
+}function bookrev_lite_sanitize_notes( $input ) {    return $input;}function book_rev_lite_sanitize_checkbox( $input ) {	return $input;	}function book_rev_lite_sanitize_text( $input ) {	return wp_kses_post( force_balance_tags( $input ) );	}function book_rev_lite_sanitize_number( $input ) {	return force_balance_tags( $input );	}function book_rev_lite_sanitize_dropdown( $input ) {	return $input;	}function book_rev_lite_sanitize_radio( $input ) {	return $input;}

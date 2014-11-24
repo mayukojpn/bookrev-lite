@@ -1,11 +1,4 @@
-<?php   
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$args = array(
-    'paged' => $paged,
-    'posts_per_page' => get_option('posts_per_page'),
-);
-$posts = get_posts($args);
-foreach ($posts as $post): setup_postdata($post); ?>
+<?php while( have_posts() ) : the_post(); ?>
     <article class="clearfix" id="post-<?php echo $post->ID; ?>">
         <div class="feat-img">
             <a href="<?php echo get_permalink($post->ID); ?>">
@@ -30,7 +23,4 @@ foreach ($posts as $post): setup_postdata($post); ?>
         </div><!-- end .content -->
     </article>
 
-<?php  endforeach; book_rev_lite_numeric_pagination(); ?>
-
-
-        
+<?php  endwhile; book_rev_lite_numeric_pagination(); ?>

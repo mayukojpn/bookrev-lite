@@ -14,7 +14,7 @@
         </header>
            
         <article class="clearfix">
-            <?php the_content(); ?>
+            <?php the_content(); ?>			<?php wp_link_pages(); ?>			
         </article>
         
         <?php endwhile; ?>

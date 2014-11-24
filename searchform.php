@@ -2,7 +2,7 @@
 
                 <form role="search" action="<?php echo site_url('/'); ?>" method="get">
 
-                    <input type="text" name="s" placeholder="Search for something">
+                    <input type="text" name="s" placeholder="<?php _e('Search for something','book-rev-lite'); ?>">
 
                 </form>
 

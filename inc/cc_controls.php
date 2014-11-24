@@ -1,17 +1,14 @@
 <?php
-
-class CWP_Theme_Support extends WP_Customize_Control
-{
-    public function render_content()
-    {
-        
-    }
-
+class book_rev_lite_Theme_Support extends WP_Customize_Control
+{
+	public function render_content()
+    {
+    }
 }
 /**
  * A class to create a dropdown for all categories in your wordpress site
  */
- class Category_Dropdown_Custom_Control extends WP_Customize_Control
+ class book_rev_lite_Category_Dropdown_Custom_Control extends WP_Customize_Control
  {
     private $cats = false;
 
@@ -50,7 +47,7 @@ class CWP_Theme_Support extends WP_Customize_Control
 /**
  * A class to create a dropdown for all google fonts
  */
- class Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
+ class book_rev_lite_Google_Font_Dropdown_Custom_Control extends WP_Customize_Control
  {
     private $fonts = false;
 
@@ -102,7 +99,7 @@ class CWP_Theme_Support extends WP_Customize_Control
         {
             $content = json_decode($fontTransient);
         } else {
-            $googleApi = 'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyB7Oz38FT-PvPLYCvqf7Zh2Lt1fqiRH2q8';
+            $googleApi = '//www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key=AIzaSyB7Oz38FT-PvPLYCvqf7Zh2Lt1fqiRH2q8';
             $fontContent = wp_remote_get( $googleApi, array('sslverify'   => false) );
             $fontTransient .= $fontContent['body'];
             set_transient("cwp_gfonts_transient", $fontTransient, $cachetime);
