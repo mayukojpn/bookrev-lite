@@ -1121,42 +1121,21 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 					'priority'		=> 35
 				)
 		);
-
+		$fonts_array = array(				'Open Sans' => 'Open Sans',				'Roboto' => 'Roboto',				'Oswald' => 'Oswald',				'Lato' => 'Lato',				'Roboto Condensed' => 'Roboto Condensed',				'Source Sans Pro' => 'Source Sans Pro',				'PT Sans' => 'PT Sans',				'Open Sans Condensed' => 'Open Sans Condensed',				'Droid Sans' => 'Droid Sans',				'Raleway' => 'Raleway',				'Droid Serif' => 'Droid Serif',				'Ubuntu' => 'Ubuntu',				'Slabo 27px' => 'Slabo 27px',				'Montserrat' => 'Montserrat',				'PT Sans Narrow' => 'PT Sans Narrow',				'Roboto Slab' => 'Roboto Slab',				'Arimo' => 'Arimo',				'Lora' => 'Lora',				'Bitter' => 'Bitter',				'Yanone Kaffeesatz' => 'Yanone Kaffeesatz',				'Oxygen' => 'Oxygen',				'Merriweather' => 'Merriweather',				'Lobster' => 'Lobster',				'Arvo' => 'Arvo',				'PT Serif' => 'PT Serif',				'Indie Flower' => 'Indie Flower',				'Noto Sans' => 'Noto Sans',				'Titillium Web' => 'Titillium Web',				'Dosis' => 'Dosis',				'Fjalla One' => 'Fjalla One',				'Francois One' => 'Francois One',				'Cabin' => 'Cabin',				'Poiret One' => 'Poiret One',				'Abel' => 'Abel',				'Playfair Display' => 'Playfair Display',				'Signika' => 'Signika',				'Vollkorn' => 'Vollkorn',				'Ubuntu Condensed' => 'Ubuntu Condensed',				'Shadows Into Light' => 'Shadows Into Light',				'Play' => 'Play',				'Muli' => 'Muli',				'Nunito' => 'Nunito',				'Bree Serif' => 'Bree Serif',				'Cuprum' => 'Cuprum',				'Archivo Narrow' => 'Archivo Narrow',				'Libre Baskerville' => 'Libre Baskerville',				'Anton' => 'Anton',				'Alegreya' => 'Alegreya',				'Maven Pro' => 'Maven Pro',				'Rokkitt' => 'Rokkitt'			);
 		// Articles Title Font
 		$wpc->add_setting( 'article-title-font', array(
-			'default'	=> '20', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
-			));
-
-		$wpc->add_control( new book_rev_lite_Google_Font_Dropdown_Custom_Control( $wpc, 'article-title-font', array(
-			'label'		=> 'Primary Font (Titles)',
-			'section'  	=> 'wpc_tc_section',
-			'settings' 	=> 'article-title-font',
-			'priority' 	=> 12
-		)));
-
-
+			'default'	=> 'Arvo', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
+			));		$wpc->add_control( 'article-title-font', array(			'settings' => 'article-title-font',			'label'   => __('Primary Font (Titles)', "book-rev-lite"),			'section' => 'wpc_tc_section',			'type'    => 'select',			'choices'    => $fonts_array,			'priority' 	=> 12		));
 		// Articles Content Font
 		$wpc->add_setting( 'article-content-font', array(
-			'default'	=> '26', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
+			'default'	=> 'Titillium Web', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
 			));
-
-		$wpc->add_control( new book_rev_lite_Google_Font_Dropdown_Custom_Control( $wpc, 'article-content-font', array(
-			'label'		=> 'Secondary Font (Content)',
-			'section'  	=> 'wpc_tc_section',
-			'settings' 	=> 'article-content-font',
-			'priority' 	=> 13
-		)));
-
+		$wpc->add_control( 'article-content-font', array(			'settings' => 'article-content-font',			'label'   => __('Secondary Font (Content)', "book-rev-lite"),			'section' => 'wpc_tc_section',			'type'    => 'select',			'choices'    => $fonts_array,			'priority' 	=> 13		));
 		// Category Font
 		$wpc->add_setting( 'meta-info-font', array(
-			'default'	=> '26', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
+			'default'	=> 'Titillium Web', 'sanitize_callback' => 'book_rev_lite_sanitize_dropdown'
 			));
+		$wpc->add_control( 'meta-info-font', array(			'settings' => 'meta-info-font',			'label'   => __('Meta Font', "book-rev-lite"),			'section' => 'wpc_tc_section',			'type'    => 'select',			'choices'    => $fonts_array,			'priority' 	=> 14		));
 
-		$wpc->add_control( new book_rev_lite_Google_Font_Dropdown_Custom_Control( $wpc, 'meta-info-font', array(
-			'label'		=> 'Meta Font',
-			'section'  	=> 'wpc_tc_section',
-			'settings' 	=> 'meta-info-font',
-			'priority' 	=> 14
-		)));
 	}
 }function bookrev_lite_sanitize_notes( $input ) {    return $input;}function book_rev_lite_sanitize_checkbox( $input ) {	return $input;	}function book_rev_lite_sanitize_text( $input ) {	return wp_kses_post( force_balance_tags( $input ) );	}function book_rev_lite_sanitize_number( $input ) {	return force_balance_tags( $input );	}function book_rev_lite_sanitize_dropdown( $input ) {	return $input;	}function book_rev_lite_sanitize_radio( $input ) {	return $input;}

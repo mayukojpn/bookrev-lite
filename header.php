@@ -26,9 +26,6 @@
 		<?php $faviconimage = get_theme_mod("favicon-image"); ?>
         <link rel="shortcut icon" href="<?php echo esc_url($faviconimage); ?>">
     <?php } ?>
-
-
-<?php require_once( get_template_directory()."/inc/wpc_customizer_styles.php" ); ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
