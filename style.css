@@ -4,7 +4,7 @@ Theme URI: https://themeisle.com/themes/bookrev-lite/
 Author: Themeisle
 Author URI: https://themeisle.com
 Description: Book Rev Lite makes presenting and selling your books a piece of cake. The responsive design includes tools for presenting your books in a beautiful way. Book Rev Lite also includes tools to make downloading your book a breeze for buyers. This theme comes with different custom widgets and beautiful homepage template.
-Version: 1.5
+Version: 1.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  brown,custom-menu, featured-images, one-column, post-formats, responsive-layout, sticky-post, translation-ready,green,white,light,right-sidebar,two-columns, custom-background,custom-header,full-width-template,theme-options
@@ -258,10 +258,10 @@ Text Domain: book-rev-lite
 /* Pagination */
 nav#pagination { border-bottom: 1px solid #ededed; background:#fff; }
 nav#pagination ul { padding: 0; text-align: center; padding: 13px 0px;}
-nav#pagination ul li { display: inline-block; text-align: center; border-radius: 3px; font-family: "Arvo", sans-serif;  color:#ccc; }
-nav#pagination ul li a { display: block; background:#e9e9e9; border-radius: 3px; color:#fff; line-height: 2; font-family: "Arvo", sans-serif; -webkit-transition: all 0.250s ease-in-out; -moz-transition: all 0.250s ease-in-out; -o-transition: all 0.250s ease-in-out; transition: all 0.250s ease-in-out; padding: 0em 0.7em;}
+nav#pagination ul li, nav#pagination ul li { display: inline-block; text-align: center; border-radius: 3px; font-family: "Arvo", sans-serif;  color:#ccc; padding-left: 5px; padding-right: 5px; }
+nav#pagination ul li a, nav#pagination ul li span { display: block; background:#e9e9e9; border-radius: 3px; color:#fff; line-height: 2; font-family: "Arvo", sans-serif; -webkit-transition: all 0.250s ease-in-out; -moz-transition: all 0.250s ease-in-out; -o-transition: all 0.250s ease-in-out; transition: all 0.250s ease-in-out; padding: 0em 0.7em;}
 nav#pagination ul li a:hover { background:#cacaca;}
-nav#pagination ul li.active a { background: #a6dd61;}
+nav#pagination ul li.active a, nav#pagination ul li span.current { background: #a6dd61;}
 
 /* Main Sidebar */
 #main-sidebar { float: left; width: 30%; background:#fff; border-left: 1px solid #ededed; }

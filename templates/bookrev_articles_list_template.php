@@ -23,4 +23,4 @@
         </div><!-- end .content -->
     </article>
 
-<?php  endwhile; book_rev_lite_numeric_pagination(); ?>
+<?php  endwhile; book_rev_lite_numeric_pagination(); ?>

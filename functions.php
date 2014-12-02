@@ -184,22 +184,6 @@ if(!function_exists("book_rev_lite_string_template_category_replace")) {
 			}
 	}
 }
-
-// Do WP_Query Shorthand
-if(!function_exists('book_rev_lite_doWPQ')) {
-	function book_rev_lite_doWPQ($args, $fn, $paginate = false) {
-		$query = new WP_Query($args);
-		if($query->have_posts()) :
-			while ($query->have_posts()) :
-				$query->the_post();
-				$fn();
-			endwhile;
-			if($paginate == true) numeric_pagination();
-		endif;
-	}	
-}
-
-
 // Returns the featured image url
 if(!function_exists('book_rev_lite_get_post_feat_image_url')) {
 	function book_rev_lite_get_post_feat_image_url($id) {
@@ -316,41 +300,7 @@ if(!function_exists('book_rev_lite_filter_default_title')) {
  */
 if(!function_exists('book_rev_lite_numeric_pagination')) {
 	function book_rev_lite_numeric_pagination() {
-		if(is_singular()) return;
-		global $wp_query;
-		if($wp_query->max_num_pages <= 1) return;
-		$paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
-		$max = intval($wp_query->max_num_pages);
-		if($paged >= 1) $links[] = $paged;
-		if($paged >= 3) { $links[] = $paged - 1; $links[] = $paged - 2; } 
-		if(($paged + 2) <= $max) { $links[] = $paged + 2; $links[] = $paged + 1; }
-
-		echo "<nav id='pagination'><ul>" . "\n";
-
-		if(get_previous_posts_link("&#x00AB;")) printf('<li>%s</li>' . "\n", get_previous_posts_link("&#x00AB;"));
-
-		if(!in_array(1, $links)) {
-			$class = 1 == $paged ? ' class="active"' : '';
-			printf('<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1');
-			if(!in_array(2, $links)) echo "<li class='dotdotdot'><a>...</a></li>";
-		}
-
-		sort($links);
-
-		foreach ((array) $links as $link) {
-			$class = $paged == $link ? ' class="active"' : '';
-			printf('<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), $link);
-		}
-
-		if ( !in_array( $max, $links ) ) {
-			if ( ! in_array( $max - 1, $links ) ) echo '<li>...</li>' . "\n";
-			$class = $paged == $max ? ' class="active"' : '';
-			printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-		}
-
-		if ( get_next_posts_link("&#x00BB;") ) printf( '<li>%s</li>' . "\n", get_next_posts_link("&#x00BB;") );
-
-		echo '</ul></div>' . "\n";
+		$links = paginate_links( array( 'type' => 'array','prev_text' => '«', 'next_text' => '»' ) );		echo '<nav id="pagination"><ul>';		foreach( $links as $link ){			echo '<li>'. $link . '</li>';		};		echo '</ul></nav>';
 	}	
 }
 

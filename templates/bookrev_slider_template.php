@@ -7,7 +7,7 @@ $args = array('cat'   => $cat);
 
 <section id="slider">
     <div class="container cycle-slideshow" data-cycle-slides=".slide" data-cycle-prev=".cycle-prev" data-cycle-next=".cycle-next">
-<?php book_rev_lite_doWPQ($args, function() { ?>
+<?php $query = new WP_Query($args);		if($query->have_posts()) :			while ($query->have_posts()) :				$query->the_post(); ?>
             <div class="slide clearfix" id="slide-<?php echo get_the_ID(); ?>">
                 <div class="book-cover">
                     <a href="<?php echo get_permalink(get_the_ID()); ?>">
@@ -45,7 +45,7 @@ $args = array('cat'   => $cat);
                     </div><!-- end .inner-sd -->
                 </div><!-- end .slide-description -->
             </div><!-- end .slide -->
-<?php }); ?>
+<?php endwhile; endif; wp_reset_postdata(); ?>
         <div class="cycle-pager"></div>
     </div><!-- end .container .cycle-slideshow -->
     <div class="cycle-prev"><i class="fa fa-chevron-left"></i></div>
