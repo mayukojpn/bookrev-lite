@@ -30,7 +30,7 @@
                                 <a href="<?php echo get_permalink($post->ID); ?>"><?php echo get_the_title(); ?></a>
                             </h2><!-- end .article-title -->
                             <div class="article-meta">
-                                <span class="categ"><?php book_rev_lite_get_post_categories($post->ID, 1); ?></span>
+                                <span class="categ"><?php the_category(' , '); ?></span>
                                 <span class="date"><?php echo get_the_date(); ?></span>
                             </div><!-- end .article-meta -->
                         </li><!-- end .article-link -->
@@ -52,7 +52,7 @@
                         <header>
                             <h3 class="article-title"><a href="<?php echo get_permalink($post->ID); ?>"><?php echo the_title(); ?></a></h3>
                             <div class="a-details">
-                                <span class="category"><?php book_rev_lite_get_post_categories($post->ID, 1); ?></span>
+                                <span class="category"><?php the_category(' , '); ?></span>
                                 <span class="date">/ <?php echo get_the_date(); ?></span>
                             </div><!-- end .a-details -->
                         </header>

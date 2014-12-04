@@ -184,36 +184,6 @@ if(!function_exists("book_rev_lite_string_template_category_replace")) {
 			}
 	}
 }
-// Returns the featured image url
-if(!function_exists('book_rev_lite_get_post_feat_image_url')) {
-	function book_rev_lite_get_post_feat_image_url($id) {
-		$feat_img_url = wp_get_attachment_image_src( get_post_thumbnail_id($id), 'single-post-thumbnail' );
-		if(empty($feat_img_url[0])) $feat_img_url[0] = get_theme_mod('default-article-image-upload');
-		echo $feat_img_url[0];
-	}	
-}
-
-
-// Display the first category only of specific post
-if(!function_exists('book_rev_lite_get_post_categories')) {
-	function book_rev_lite_get_post_categories($id, $count = 1, $separator = ", ") {
-		$categories = get_the_category($id);
-		$i = 0;
-		$cats = "";
-		if($categories) {
-			foreach ($categories as $category) {
-				if($i < $count) {
-					if($i === $count-1) $separator = "";
-					$cats .= "<a href='".get_category_link($category->term_id)."' title='". esc_attr(sprintf(__("View all posts in %s", "book-rev-lite"), $category->name)) ."'>".$category->cat_name."</a>".$separator;
-				}
-				$i++;
-			}
-			echo trim($cats, $separator);
-		}
-	}	
-}
-
-
 // Display limited content
 if(!function_exists('book_rev_lite_get_limited_content')) {
 	function book_rev_lite_get_limited_content($id, $character_count, $after) {
@@ -300,7 +270,7 @@ if(!function_exists('book_rev_lite_filter_default_title')) {
  */
 if(!function_exists('book_rev_lite_numeric_pagination')) {
 	function book_rev_lite_numeric_pagination() {
-		$links = paginate_links( array( 'type' => 'array','prev_text' => '«', 'next_text' => '»' ) );		echo '<nav id="pagination"><ul>';		foreach( $links as $link ){			echo '<li>'. $link . '</li>';		};		echo '</ul></nav>';
+		$links = paginate_links( array( 'type' => 'array','prev_text' => '«', 'next_text' => '»' ) );						if( !empty($links) ):			echo '<nav id="pagination"><ul>';			foreach( $links as $link ){				echo '<li>'. $link . '</li>';			};			echo '</ul></nav>';		endif;
 	}	
 }
 

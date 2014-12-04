@@ -17,7 +17,7 @@
 
 		            <article class="slide clearfix">
 		                <div class="feat-img">
-		                    <a href="<?php echo get_permalink(get_the_ID()); ?>"><img src="<?php book_rev_lite_get_post_feat_image_url(get_the_ID()); ?>"></a>
+		                    <a href="<?php echo get_permalink(get_the_ID()); ?>">								<?php 								if ( has_post_thumbnail($post->ID) ) { // check if the post has a Post Thumbnail assigned to it.									the_post_thumbnail($post->ID,'single-post-thumbnail');								} 								else {									$def = get_theme_mod('default-article-image-upload');									if( !empty($def) ) {										echo '<img src="'.$def.'">';									}								}								?>							</a>
 		                    <div class="comment-count">
 		                        <i class="fa fa-comments"></i>
 		                        <a href="<?php echo get_comments_link(get_the_ID()); ?>"><?php comments_number("0", "1", "%"); ?></a>
@@ -30,7 +30,7 @@
 		                    <header>
 		                        <a href="<?php echo get_permalink(get_the_ID()); ?>" class="title"><h3><?php the_title(); ?></h3></a>
 		                        <div class="meta">
-		                            <span class="category"><?php book_rev_lite_get_post_categories(get_the_ID(), 1); ?></span>
+		                            <span class="category"><?php the_category(' , '); ?></span>
 		                            <span class="date"><?php the_time( get_option( 'date_format' ) ); ?></span>
 		                        </div><!-- end .article-meta -->
 		                    </header>
