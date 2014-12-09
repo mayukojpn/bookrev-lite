@@ -28,8 +28,8 @@
                 </a>
             </div><!-- end .footer-logo -->
 
-            <div class="copyright-info">
-                <p><?php echo get_theme_mod( 'copyright_textbox', 'Bookrev Pro powered by WordPress' ); ?></p>
+            <div class="copyright-info">				
+                <p><?php echo get_theme_mod( 'copyright_textbox', 'WordPress Theme developed by ThemeIsle' ); ?></p>				<p><a href="https://themeisle.com/themes/bookrev-lite/" target="_blank" rel="nofollow">Book Rev Lite</a> <?php _e('powered by','book-rev-lite'); ?> <a href="http://wordpress.org/" target="_blank" rel="nofollow">WordPress</a></p>				
             </div><!-- end .copyright-info -->
         </div><!-- end .container -->
     </div><!-- end .lower-footer -->

@@ -44,7 +44,7 @@ function book_rev_lite_required_plugins() {
 			'slug' 		=> 'wp-product-review',
 			'required' 	=> false,
 		),
-
+		array(			'name' 		=> 'Tweet Old Post',			'slug' 		=> 'tweet-old-post',			'required' 	=> false,		),
 		
 	);
 
