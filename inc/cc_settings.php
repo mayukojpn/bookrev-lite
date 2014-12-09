@@ -251,7 +251,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'copyright_textbox',
 			    array(
-			        'default' => __("WordPress Theme developed by ThemeIsle", "book-rev-lite"), 'sanitize_callback' => 'book_rev_lite_sanitize_text'
+			        'sanitize_callback' => 'book_rev_lite_sanitize_text'
 			    )
 			);
 			// Copyright Text Control
@@ -319,7 +319,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		 */
 		
 			// Footer Logo Upload Setting
-			$wpc->add_setting('footer-logo-upload', array('sanitize_callback' => 'esc_url_raw'));
+			$wpc->add_setting('footer-logo-upload', array('sanitize_callback' => 'esc_url_raw','default' => get_template_directory_uri().'/img/footerlogo.png'));
 
 			// Footer Logo Upload Control
 			$wpc->add_control(
