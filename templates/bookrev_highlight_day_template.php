@@ -12,7 +12,7 @@
 
             <div class="highlight-inner">
                 <div class="featured-image">
-                    <img src="<?php book_rev_lite_get_post_feat_image_url(get_the_ID()); ?>">
+                    <?php 					if ( has_post_thumbnail($post->ID) ) { // check if the post has a Post Thumbnail assigned to it.						the_post_thumbnail($post->ID,'single-post-thumbnail');					} 					else {						$def = get_theme_mod('default-article-image-upload');						if( !empty($def) ) {							echo '<img src="'.$def.'">';						}					}					?>
                     <span class="comments">
                         <i class="fa fa-comments"></i>
                         <?php comments_number("0", "1", "%"); ?>
@@ -22,7 +22,7 @@
                 <div class="article-details">
                     <h2 class="title"><a href="<?php echo get_permalink(get_the_ID()); ?>"><?php the_title(); ?></a></h2>
                     <div class="meta">
-                        <span class="categ"><?php book_rev_lite_get_post_categories(get_the_ID(), 1); ?></span>
+                        <span class="categ"><?php the_category(' , '); ?></span>
                         <span class="date"><?php echo the_date(); ?></span>
                     </div><!-- end .meta -->
                 </div><!-- end .article-details -->

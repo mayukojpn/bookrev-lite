@@ -5,7 +5,7 @@
         <div class="container">
             <?php dynamic_sidebar('book_rev_lite_footer_sidebar'); ?>
         </div><!-- end .container -->
-    </div><!-- end .upper-footer -->
+    </div><!-- end .upper-footer --><?php else: ?>	<div class="upper-footer clearfix">        <div class="container">						<?php				the_widget('WP_Widget_Archives');				the_widget('WP_Widget_Calendar');								the_widget('WP_Widget_Categories');			?>	        </div><!-- end .container -->    </div><!-- end .upper-footer -->
 <?php endif; ?>
 
     <div class="lower-footer clearfix">
@@ -13,23 +13,21 @@
             <div class="footer-logo">
                 <a href="<?php echo home_url(); ?>">
                     <?php
-                        $display_footer_logo = get_theme_mod("mp_display_footer_logo_image");
+                        $display_footer_logo = get_theme_mod("mp_display_footer_logo_image",true);
                         if($display_footer_logo)
                         {
-                            $footer_logo = get_theme_mod("footer-logo-upload");
-                            if($footer_logo != "")
+                            $footer_logo = get_theme_mod("footer-logo-upload",get_template_directory_uri().'/img/footerlogo.png');
+                            if( !empty($footer_logo) )
                             {
                                 echo "<img src='" . esc_url($footer_logo) . "'/>";
-                            } else { 
-                                echo "<img src='" .  get_template_directory_uri() . "/img/footerlogo.png'/>";
                             }
                         }
                     ?>
                 </a>
             </div><!-- end .footer-logo -->
 
-            <div class="copyright-info">
-                <p><?php echo get_theme_mod( 'copyright_textbox', 'Bookrev Pro powered by WordPress' ); ?></p>
+            <div class="copyright-info">				
+                <p><?php echo get_theme_mod( 'copyright_textbox' ); ?></p>				<p><a href="https://themeisle.com/themes/bookrev-lite/" target="_blank" rel="nofollow">Book Rev Lite</a> <?php _e('powered by','book-rev-lite'); ?> <a href="http://wordpress.org/" target="_blank" rel="nofollow">WordPress</a></p>				
             </div><!-- end .copyright-info -->
         </div><!-- end .container -->
     </div><!-- end .lower-footer -->

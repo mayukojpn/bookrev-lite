@@ -3,20 +3,7 @@
 if(!function_exists('book_rev_lite_theme_customizer')) {
 	function book_rev_lite_theme_customizer($wpc) {
 		// Load the custom Customizer Controls
-		require_once( get_template_directory() . '/inc/cc_controls.php' );
-		$wpc->add_section( 'cwp_theme_notes' , array(
-		'title'      => __('Theme Support','book-rev-lite'),
-		'description' => sprintf( __( "Thank you for being part of this! We've spent almost 6 months building ThemeIsle without really knowing if anyone will ever use a theme or not, so we're very grateful that you've decided to work with us. Wanna <a href='http://themeisle.com/contact/' target='_blank'>say hi</a>?
-		<br/><br/> <a href='https://themeisle.com/forums/forum/bookrev-lite' target='_blank'>Support Forum</a> | <a href='https://themeisle.com/documentation-bookrev-lite' target='_blank'>Documentation</a>")),
-		'priority'   => 1,
-		));
-
-		$wpc->add_setting('cwp_theme_notes', array('sanitize_callback' => 'bookrev_lite_sanitize_notes'));
-
-		$wpc->add_control( new book_rev_lite_Theme_Support( $wpc, 'cwp_theme_notes',
-	    array(
-	        'section' => 'cwp_theme_notes',
-	    )));
+		require_once( get_template_directory() . '/inc/cc_controls.php' );
 
 		/* Add the social section */
 		$wpc->add_section(
@@ -73,8 +60,8 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 						'settings'	=> 'favicon-image'
 					)
 				)
-			);
-
+			);		class Book_Rev_Lite_Featured_Review extends WP_Customize_Control		{			public function render_content()			{				_e('Check out the <a href="https://themeisle.com/themes/bookrev/">PRO version</a> to be able to use this widget!',"book-rev-lite");			}		} 			class Book_Rev_Lite_Full_Width extends WP_Customize_Control		{			public function render_content()			{				_e('Check out the <a href="https://themeisle.com/themes/bookrev/">PRO version</a> to be able to use this template!',"book-rev-lite");			}		} 							/* BookRev Featured Reviews widget */	
+		$wpc->add_section(			'feauted_review_widget_section',			array(					'title'			=> __("BookRev Featured Reviews widget", "book-rev-lite"),					'description'	=> __("This widget displays the latest reviews from a specific category.", "book-rev-lite"),					'priority'		=> 2				)		);				$wpc->add_setting(			'feauted_review_widget',array('sanitize_callback' => 'bookrev_lite_sanitize_notes')		);				$wpc->add_control( new Book_Rev_Lite_Featured_Review( $wpc, 'feauted_review_widget',			array(				'section' => 'feauted_review_widget_section',		   )		));				/* BookRev Latest comments widget */			$wpc->add_section(			'latest_comments_widget_section',			array(					'title'			=> __("BookRev Latest Comments widget", "book-rev-lite"),					'description'	=> __("This widget displays the latest comments.", "book-rev-lite"),					'priority'		=> 3				)		);				$wpc->add_setting(			'latest_comments_widget',array('sanitize_callback' => 'bookrev_lite_sanitize_notes')		);				$wpc->add_control( new Book_Rev_Lite_Featured_Review( $wpc, 'latest_comments_widget',			array(				'section' => 'latest_comments_widget_section',		   )		));				/* Full width page template */					$wpc->add_section(			'full_width_page_section',			array(					'title'			=> __("Full width template page", "book-rev-lite"),					'priority'		=> 4				)		);				$wpc->add_setting(			'full_width_page',array('sanitize_callback' => 'bookrev_lite_sanitize_notes')		);				$wpc->add_control( new Book_Rev_Lite_Full_Width( $wpc, 'full_width_page',			array(				'section' => 'full_width_page_section',		   )		));
 		/* Add the social section */
 		$wpc->add_section(
 			'wpc_social_section',
@@ -264,7 +251,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'copyright_textbox',
 			    array(
-			        'default' => __("WordPress Theme developed by ThemeIsle", "book-rev-lite"), 'sanitize_callback' => 'book_rev_lite_sanitize_text'
+			        'sanitize_callback' => 'book_rev_lite_sanitize_text'
 			    )
 			);
 			// Copyright Text Control
@@ -332,7 +319,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		 */
 		
 			// Footer Logo Upload Setting
-			$wpc->add_setting('footer-logo-upload', array('sanitize_callback' => 'esc_url_raw'));
+			$wpc->add_setting('footer-logo-upload', array('sanitize_callback' => 'esc_url_raw','default' => get_template_directory_uri().'/img/footerlogo.png'));
 
 			// Footer Logo Upload Control
 			$wpc->add_control(
@@ -807,7 +794,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			'wpc_colors_section',
 			array(
 					'title'			=> __("Main Page Background Colors", "book-rev-lite"),
-					'description'	=> __("Here you can customize most of the colors of your theme. More color customization options will be added in future updates..", "book-rev-lite"),
+					'description'	=> __("For more color customization options check out the <a href='https://themeisle.com/themes/bookrev/'>PRO version</a>!", "book-rev-lite"),
 					'priority'		=> 100
 				)
 		);
@@ -1138,4 +1125,4 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 		$wpc->add_control( 'meta-info-font', array(			'settings' => 'meta-info-font',			'label'   => __('Meta Font', "book-rev-lite"),			'section' => 'wpc_tc_section',			'type'    => 'select',			'choices'    => $fonts_array,			'priority' 	=> 14		));
 
 	}
-}function bookrev_lite_sanitize_notes( $input ) {    return $input;}function book_rev_lite_sanitize_checkbox( $input ) {	return $input;	}function book_rev_lite_sanitize_text( $input ) {	return wp_kses_post( force_balance_tags( $input ) );	}function book_rev_lite_sanitize_number( $input ) {	return force_balance_tags( $input );	}function book_rev_lite_sanitize_dropdown( $input ) {	return $input;	}function book_rev_lite_sanitize_radio( $input ) {	return $input;}
+}function bookrev_lite_sanitize_notes( $input ) {    return $input;}function book_rev_lite_sanitize_checkbox( $input ) {	return $input;	}function book_rev_lite_sanitize_text( $input ) {	return wp_kses_post( force_balance_tags( $input ) );	}function book_rev_lite_sanitize_number( $input ) {	return force_balance_tags( $input );	}function book_rev_lite_sanitize_dropdown( $input ) {	return $input;	}function book_rev_lite_sanitize_radio( $input ) {	return $input;}/** * Binds JS handlers to make Theme Customizer preview reload changes asynchronously. */function book_rev_lite_customize_preview_js() {	wp_enqueue_script( 'book_rev_lite_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );}add_action( 'customize_preview_init', 'book_rev_lite_customize_preview_js' );function book_rev_lite_registers() {	wp_register_script( 'book_rev_lite_customizer_script', get_template_directory_uri() . '/js/bookrev_lite_customizer.js', array("jquery"), '20120206', true  );	wp_enqueue_script( 'book_rev_lite_customizer_script' );}add_action( 'customize_controls_enqueue_scripts', 'book_rev_lite_registers' );
