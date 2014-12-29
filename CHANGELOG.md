@@ -1,5 +1,16 @@
 
 
+### 1.5.4 - 29/12/2014
+
+ Changes: 
+
+
+ * Fixed wp review, recreate book_rev_lite_numeric_pagination function, delete function book_rev_lite_doWPQ
+ * Changed function for categories, and post thumbnail
+ * added post navigation, forum, documentation, ad upgrade links, upsell in customizer, default widgets in sidebar
+ * Added default bottom ligo and default footer widgets
+
+
 ### 1.5 - 25/11/2014
 
  Changes: 
