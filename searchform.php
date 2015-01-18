@@ -1,4 +1,4 @@
-			<div id="top-bar-search">
+			<div class="search-form">
 
                 <form role="search" action="<?php echo site_url('/'); ?>" method="get">
 
@@ -8,4 +8,4 @@
 
                 <span class="search-icon"><i class="fa fa-search"></i></span>
 
-            </div><!-- end #top-bar-search -->
+            </div><!-- end #search-form -->
