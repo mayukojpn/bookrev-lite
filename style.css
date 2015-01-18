@@ -3,8 +3,8 @@ Theme Name:Book Rev Lite
 Theme URI: https://themeisle.com/themes/bookrev-lite/
 Author: Themeisle
 Author URI: https://themeisle.com
-Description: Book Rev Lite is a free book review WordPress Theme. The responsive design includes tools for presenting your books in a beautiful way. Book Rev Lite also includes tools to make downloading your book a breeze for buyers. This theme comes with different custom widgets and beautiful homepage template. Official support forum - https://themeisle.com/forums/forum/bookrev-lite.
-Version: 1.5.6
+Description: Book Rev Lite makes presenting and selling your books a piece of cake. The responsive design includes tools for presenting your books in a beautiful way. Book Rev Lite also includes tools to make downloading your book a breeze for buyers. This theme comes with different custom widgets and beautiful homepage template. <a href="https://themeisle.com/forums/forum/bookrev-lite">Official support forum</a> (https://themeisle.com/forums/forum/bookrev-lite).
+Version: 1.5.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  brown,custom-menu, featured-images, one-column, post-formats, responsive-layout, sticky-post, translation-ready,green,white,light,right-sidebar,two-columns, custom-background,custom-header,full-width-template,theme-options
@@ -58,14 +58,14 @@ Text Domain: book-rev-lite
 }
 
 /* Top Bar Search */
-#top-bar-search {
+.search-form {
   float: right;
   width: 14em;
   position: relative;
   margin-top: 0.8em;
 }
 
-#top-bar-search input {
+.search-form input {
   width: 100%;
   border: 1px solid #423c37;
   border-radius: 15px;
@@ -78,7 +78,7 @@ Text Domain: book-rev-lite
   box-shadow: inset 0px 1px 3px rgba(0,0,0,0.4);
 }
 
-#top-bar-search .search-icon {
+.search-form .search-icon {
   display: block;
   position: absolute;
   width: 14px;
@@ -89,7 +89,7 @@ Text Domain: book-rev-lite
   line-height: 0;
 }
 
-#top-bar-search .search-icon i {
+.search-form .search-icon i {
   font-size: 14px;
   color: #49433f;
   -webkit-transition: all 0.250s ease-in-out;
@@ -1258,6 +1258,26 @@ nav#pagination ul li.active a, nav#pagination ul li span.current {
   color: #3c3c3c;
 }
 
+/* Widget Search Form */
+
+.widget .search-form {
+  float: none;
+  position: static;
+  width: 100%;
+  padding: 20px 15px;
+  margin: 0;
+}
+
+.widget .search-form input {
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #DADADA;
+  box-shadow: none;
+}
+
+.widget .search-form i {
+  display: none;
+}
 
 /* CWP Popular Reviews */
 .widget .cwp-popular-review {
@@ -1273,6 +1293,10 @@ nav#pagination ul li.active a, nav#pagination ul li span.current {
 	position: relative;
 }
 
+.cwp_easyPieChart {
+  width: 40px !important;
+  height: 40px !important;
+}
 
 
 /* Sidebar - Widget Tag Cloud */
