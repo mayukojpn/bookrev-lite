@@ -372,7 +372,8 @@ Text Domain: book-rev-lite
 
 /* Slider Body */
 #slider .slide .sd-body {
-  height: 105px;
+  height: 112px;
+  overflow: hidden;
 }
 
 #slider .slide .sd-body p {
