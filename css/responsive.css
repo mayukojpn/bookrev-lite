@@ -173,7 +173,7 @@
 	}
 
 	#slider .slide .sd-body {
-		height: 143px;
+		height: 160px;
 	}
 
 	.article-container article .feat-img {
@@ -304,6 +304,10 @@
 		display: none;
 	}
 
+	#slider .slide .sd-body p {
+		font-size: 14px;
+	}
+
 	#slider .slide .slide-description .sd-title {
 		font-size: 18px;
 		line-height: 1;
@@ -314,9 +318,8 @@
 	}
 
 	#slider .slide .sd-body {
-		height: 143px;
+		height: 163px;
 	}
-
 	.article-container article .feat-img {
 		float: none;
 		margin: 0 auto;
