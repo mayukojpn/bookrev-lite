@@ -1,5 +1,41 @@
 
 
+### 1.5.4 - 25/01/2015
+
+ Changes: 
+
+
+ * Update style.css
+ * Fixed #5, Fixed #6, plus other modifications
+
+Fixed #5, Fixed #6, Fixed overall minor design flaws, Made general
+design improvements (added design for: tables, tags, link pages, ordered
+lists, definition lists, address).
+ * Merge pull request #7 from vncatalin/development
+
+Fixed #5, Fixed #6, plus other modifications
+ * Update style.css
+ * Fixed: #8 #9 #10 #11
+
+Fixed: #8 #9 #10 #11
+ * Update style.css
+ * Merge branch 'development' of https://github.com/vncatalin/bookrev-lite into vncatalin-development
+
+Conflicts:
+	style.css
+r
+ * Merge branch 'vncatalin-development' into development
+ * Update style.css
+ * Update style.css
+ * Fixed #9
+
+Fixed #9 - Slider responsive content display issue.
+ * Merge pull request #13 from vncatalin/development
+
+Fixed #9
+ * Update style.css
+
+
 ### 1.5.4 - 29/12/2014
 
  Changes: 
