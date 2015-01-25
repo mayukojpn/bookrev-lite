@@ -5,6 +5,14 @@
  Changes: 
 
 
+ * improved description
+
+
+### 1.5.4 - 25/01/2015
+
+ Changes: 
+
+
  * Update style.css
  * Fixed #5, Fixed #6, plus other modifications
 
