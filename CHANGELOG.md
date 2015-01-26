@@ -1,5 +1,19 @@
 
 
+### 1.5.9 - 26/01/2015
+
+ Changes: 
+
+
+ * Fixed #17
+
+Fixed #17
+ * Merge pull request #18 from vncatalin/development
+
+Fixed #17
+ * Update style.css
+
+
 ### 1.5.4 - 25/01/2015
 
  Changes: 
