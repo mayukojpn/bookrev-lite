@@ -1,5 +1,19 @@
 
 
+### 1.6.2 - 06/03/2015
+
+ Changes: 
+
+
+ * Fixed Slider Issue (retry)
+
+Fixed issue #23 that @HardeepAsrani mentioned in #23 and tried to fix in
+#24 but there was a github commit error.
+ * Merge pull request #25 from vncatalin/development
+
+Fixed Slider Issue (retry)
+
+
 ### 1.6 - 09/02/2015
 
  Changes: 
