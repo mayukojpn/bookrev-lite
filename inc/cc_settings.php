@@ -251,7 +251,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			$wpc->add_setting(
 			    'copyright_textbox',
 			    array(
-			        'sanitize_callback' => 'book_rev_lite_sanitize_text'
+			        'sanitize_callback' => 'book_rev_lite_sanitize_text',					'default' => __('Copyright 2015 ThemeIsle',"book-rev-lite")
 			    )
 			);
 			// Copyright Text Control
