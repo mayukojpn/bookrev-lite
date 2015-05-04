@@ -1,5 +1,14 @@
 
 
+### 1.6.3 - 04/05/2015
+
+ Changes: 
+
+
+ * TGMPA security update
+ * Update style.css
+
+
 ### 1.6.2 - 06/03/2015
 
  Changes: 
