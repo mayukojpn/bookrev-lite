@@ -5,6 +5,14 @@
  Changes: 
 
 
+ * Added default copyright message
+
+
+### 1.6.3 - 04/05/2015
+
+ Changes: 
+
+
  * TGMPA security update
  * Update style.css
 
