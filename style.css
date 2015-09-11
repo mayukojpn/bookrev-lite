@@ -4,7 +4,7 @@ Theme URI: https://themeisle.com/themes/bookrev-lite/
 Author: Themeisle
 Author URI: https://themeisle.com
 Description: Book Rev Lite is a free book review WordPress Theme. The responsive, clean and modern design includes tools for presenting your books/products in a beautiful way, you can easily add adsense ads, google fonts, custom colors, slider support and the pro version has also ecommerce ( Woocommerce ) integration.Works great for product review and amazon affiliate sites.
-Version: 1.6.5
+Version: 1.6.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags:  brown,custom-menu, featured-images, one-column, post-formats, responsive-layout, sticky-post, translation-ready,green,white,light,right-sidebar,two-columns, custom-background,custom-header,full-width-template,theme-options
@@ -2799,3 +2799,6 @@ img.aligncenter {
 .nav-single .nav-previous {
   float: left;
 }
+
+.screen-reader-text { position: absolute!important; clip: rect(1px,1px,1px,1px); overflow: hidden; color: #000; background: #fff; width: 1px; height: 1px; }
+.screen-reader-text:focus { clip: auto; overflow: auto; left: 1em; top: 1em; z-index: 100; padding: 1em; background-color: #fff; font-size: 1.2em; outline: 1px solid; width: auto; height: auto; }
