@@ -1,5 +1,13 @@
 
 
+### 1.6.6 - 11/09/2015
+
+ Changes: 
+
+
+ * Update pot file and tgm
+
+
 ### 1.6.5 - 16/07/2015
 
  Changes: 
