@@ -1,5 +1,18 @@
 
 
+### 1.6.7 - 27/11/2015
+
+ Changes: 
+
+
+ * #34 Documentation link issue fixed !
+
+Documentation link issue fixed
+ * Merge pull request #35 from Gouravwp/patch-1
+
+#34 Documentation link issue fixed !
+
+
 ### 1.6.6 - 11/09/2015
 
  Changes: 
