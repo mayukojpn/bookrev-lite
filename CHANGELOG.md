@@ -1,5 +1,13 @@
 
 
+### 1.6.8 - 31/03/2016
+
+ Changes: 
+
+
+ * Fixed error on slider image #23
+
+
 ### 1.6.7 - 27/11/2015
 
  Changes: 
