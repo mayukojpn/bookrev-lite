@@ -1104,7 +1104,7 @@ if(!function_exists('book_rev_lite_theme_customizer')) {
 			'wpc_tc_section',
 			array(
 					'title'			=> __("Typography", "book-rev-lite"),
-					'description'	=> __("Change the typography of your there and the color of your content the way you want.", "book-rev-lite"),
+					'description'	=> __("Change the typography of your theme and the color of your content the way you want.", "book-rev-lite"),
 					'priority'		=> 35
 				)
 		);
