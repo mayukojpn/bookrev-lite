@@ -9,10 +9,7 @@ $args = array('cat'   => $cat);
     <div class="container cycle-slideshow" data-cycle-slides=".slide" data-cycle-prev=".cycle-prev" data-cycle-next=".cycle-next">
 <?php $query = new WP_Query($args);		if($query->have_posts()) :			while ($query->have_posts()) :				$query->the_post(); ?>
             <div class="slide clearfix" id="slide-<?php echo get_the_ID(); ?>">
-                <div class="book-cover">
-                    <a href="<?php echo get_permalink(get_the_ID()); ?>">
-                        <img src="<?php echo book_rev_lite_wpr_get_product_image(); ?>">
-                    </a>
+                <div class="book-cover">					<?php					$book_rev_lite_wpr_get_product_image = book_rev_lite_wpr_get_product_image();					if( !empty($book_rev_lite_wpr_get_product_image) ) {						echo ' <a href="'.get_permalink(get_the_ID()).'">';							echo '<img src="'.$book_rev_lite_wpr_get_product_image.'">';						echo '</a>';						}					?>
                 </div><!-- end .book-cover -->
 
                 <div class="slide-description">
